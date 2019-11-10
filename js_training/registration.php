@@ -1,8 +1,7 @@
-
-
 <?php
-include('controller.php');
 ?>
+
+<?php include('controller.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -4,13 +4,15 @@ session_start();
 
 $db=mysqli_connect('localhost','root','','uenr_html_club') or die("Could not connect to database");
 
-
+$member_name=" ";
+$course=" ";
+$email=" ";
 
 $errors=array();
 $member_name= mysqli_real_escape_string($db, $_POST['member_name']);
-$course=mysqli_real_escape_string($db, $_POST["course"]);
-$email=mysqli_real_escape_string($db, $_POST["email"]);
-$password1=mysqli_real_escape_string($db, $_POST["password_1"]);
+$course=mysqli_real_escape_string($db, $_POST['course']);
+$email=mysqli_real_escape_string($db, $_POST['email']);
+$password1=mysqli_real_escape_string($db, $_POST['password_1']);
 $password2=mysqli_real_escape_string($db, $_POST["password_2"]);
 
 
@@ -50,19 +52,3 @@ if (count($errors)==0){
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
