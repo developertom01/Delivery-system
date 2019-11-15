@@ -4,24 +4,29 @@ session_start();
 
 $db=mysqli_connect('localhost','root','','uenr_html_club') or die("Could not connect to database");
 
-$member_name=" ";
+$member_name="";
 $course=" ";
 $email=" ";
+$password1=" ";
+$password2=" ";
+
 
 $errors=array();
+
+
+if (isset($_POST['member_name']) && isset($_POST['course']) && isset($_POST['email']) && isset($_POST['password_1']) && isset($_POST['password_2'])){ 
 $member_name= mysqli_real_escape_string($db, $_POST['member_name']);
 $course=mysqli_real_escape_string($db, $_POST['course']);
 $email=mysqli_real_escape_string($db, $_POST['email']);
 $password1=mysqli_real_escape_string($db, $_POST['password_1']);
 $password2=mysqli_real_escape_string($db, $_POST["password_2"]);
-
+}
 
 #Handling errors
 if(empty($member_name)){ array_push($errors, "Name of member needed");}
 if(empty($course)){ array_push($errors,"Course of member needed");}
 if(empty($email)){ array_push($errors,"Email has to be inputed");}
 if(empty($password1)){ array_push($errors,"Password needed");}
-if (strlen($password1)<8 ){array_push($errors,"password should be atleast 8 characters");}
 if($password1 != $password2){array_push($errors, "Passwords do not match");}
 
 
@@ -45,7 +50,7 @@ if (count($errors)==0){
     myspli_query($db,$query);
     $_SESSION["username"]=$username;
     $_SESSION["SUCCESS"]="You are now logged in";
-    header("location: dashbord.php ");
+    header("location: dashboard.php ");
     exit(0);
 }
 

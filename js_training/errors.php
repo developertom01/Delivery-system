@@ -1,11 +1,9 @@
-<?php
-session_start()
-?>
 
-<?php if (count($erros)>0): ?>
+
+<?php if (count($errors)>0): ?>
 
 <div class="errors">
-<?php foreach($erros as $erro) : ?>
+<?php foreach($errors as $error) : ?>
 
 <p> <?php echo $error ?></p>
 

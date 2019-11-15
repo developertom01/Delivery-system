@@ -1,7 +1,8 @@
 <?php
+include('controller.php')
 ?>
 
-<?php include('controller.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +22,7 @@
 
            <h1>Register</h1>
 
-            <?php include('erros.php'); ?>
+            <?php include('errors.php') ?>
 
             <div class="inputfield">
                <input type="text" placeholder="Full Name" id="fullname"  name="member_name" >
@@ -56,4 +57,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-
